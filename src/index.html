@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (
+            localStorage.getItem("color-theme") === "dark" ||
+            (!("color-theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<div class="dark:bg-slate-700 duration-200 ">
+    <nav>
+        <div class="p-2 bg-gray-100 dark:bg-slate-900 rounded-b-full flex mx-auto w-1/6 justify-center">
+            <button id="theme-toggle" type="button"
+                class="text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-gray-300 dark:hover:text-gray-700 dark:hover:bg-gray-200 rounded-full text-sm p-2.5">
+                
+                <svg id="theme-toggle-dark-icon" class="hidden w-10 h-10" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-10 h-10" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+        </div>
+        
+    </nav>
+
+
+    <div class="lg:grid  lg:grid-cols-3 justify-center gap-10 mt-16 lg:mx-16">
+        <!--Personal Card-->
+        <div id="card1"
+            class="py-12 lg:rounded-3xl rounded-t-xl bg-gray-100 dark:bg-slate-900 col-span-1 flex items-center justify-center">
+            <div class="m-auto">
+                <div class="flex justify-center w-2/3 mx-auto"><img class="rounded-full" src="src/img/burak.jpg"></div>
+                <div class="font-poppins font-bold italic text-4xl text-center dark:text-white mt-4">Burak Çetinkaya</div>
+                <div
+                    class="font-poppins text-black text-xl font-semibold dark:rounded-md table px-4 rounded-md shadow-xl mt-5 hover:scale-110 duration-500 dark:bg-[#27b497] py-1 mx-auto">
+                    <a class="">Front-End Developer</a>
+                </div>
+                <div id="poppins-icons" class=" flex gap-2 justify-center mt-4">
+                    <a href="https://www.github.com/thecetinkaya" target="_blank">
+                        <span class="hover:scale-110 duration-500 social-icon text-black dark:text-black">
+                            <i class=" fa-brands fa-github"></i>
+                        </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thecetinkaya/" target="_blank">
+                        <span class="social-icon text-[#0a66c2] dark:text-black">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                    </a>
+                    <a href="https://www.instagram.com/thecetinkaya" target="_blank">
+                        <span class="social-icon text-[#E1306C] dark:text-black">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                    </a>
+                    <a href="https://www.twitter.com/1burakcetinkaya" target="_blank">
+                        <span class="social-icon text-[#1DA1F2] dark:text-black">
+                            <i class="fa-brands fa-twitter"></i>
+                        </span>
+                    </a>
+                </div>
+                <div
+                    class="rounded-md mt-4 font-poppins font-bold text-xl table px-6 py-2 dark:text-gray-300 bg-gray-200 dark:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto ">
+                    Özgeçmişimi İndir</div>
+            </div>
+
+        </div>
+        <!--End Personal Card-->
+
+        <div id="card2" class="col-span-2 bg-gray-100 lg:rounded-3xl dark:bg-slate-900 p-10">
+            <div class="">
+                <a class="text-4xl font-poppins font-semibold uppercase dark:text-white">Hakkımda</a>
+                <div class="mt-3 font-poppins italic text-lg dark:text-gray-300 ">Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Deserunt
+                    aliquid quis eum culpa odio sequi, numquam pariatur dolore cum consequatur, nostr tenetur
+                    voluptatibus error non quod consequuntur temporibus eveniet, praesentium possimus doloribus
+                    dolor laboriosam totam? Commodi id vel officiis veniam maiores. Doloremque numquam nam
+                    dignissimos similique perferendis aspernatur? Veniam totam ducimus odio sint assumenda vitae
+                    beatae eos eaque alias. Perspiciatis tenetur, dolorum ducimus maxime earum accusantium repellat
+                    illum amet ab qui tempore quo at, labore id voluptatem fugit porro distinctio, totam quaerat
+                    neque! Maxime, corrupti. Rerum beatae laudantium necessitatibus explicabo.
+                </div>
+                <div class="mt-5">
+                    <div><a class="text-4xl font-poppins font-semibold uppercase dark:text-white">Neler Yapıyorum</a>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-7  mt-3 ">
+                        <div
+                            class="col-span-1 bg-gray-200 dark:bg-gradient-to-r from-cyan-500 to-blue-500 p-6  lg:rounded-xl">
+                            <div class="flex">
+                                <div>
+                                    <a class="text-4xl">Ps</a>
+                                </div>
+                                <div class="mx-3">
+                                    <h3 class="text-2xl font-poppins font-medium">Adobe Photoshop</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, eos?</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class="col-span-1 bg-gray-200 dark:bg-gradient-to-r from-orange-400 to-orange-700 p-6  lg:rounded-xl">
+                            <div class="flex">
+                                <div>
+                                    <h3 class="text-4xl  rounded-xl">Ai</h3>
+                                </div>
+                                <div class="mx-3">
+                                    <h3 class="text-2xl font-poppins font-medium">Adobe İllustrator</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, eos?</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-span-1 bg-gray-200 dark:bg-gradient-to-r from-[#ffe5d9] to-[#ffd7ba] p-6  lg:rounded-xl">
+                            <div class="flex">
+                                <div>
+                                    <i class="fa-solid fa-code fa-2xl"></i>
+                                </div>
+                                <div class="mx-3">
+                                    <h3 class="text-2xl font-poppins font-medium">Web Geliştirme</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, eos?</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-span-1 bg-gray-200 dark:bg-green-200 p-6  lg:rounded-xl">
+                            <div class="flex">
+                                <div>
+                                    <i class="fa-solid fa-code fa-2xl"></i>
+                                </div>
+                                <div class="mx-3">
+                                    <h3 class="text-2xl font-poppins font-medium">Web Geliştirme</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, eos?</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="contact"
+            class=" lg:rounded-3xl rounded-b-xl bg-gray-100 dark:bg-slate-900 col-span-1  flex items-center justify-center">
+            <div class="col-span-1 w-3/4"><h4 class="text-4xl dark:text-white font-poppins font-semibold mb-10">Working Skills</h4><div class=" mb-7"><div class="flex justify-between py-1"><span class=" text-base text-gray-lite font-semibold dark:text-[#A6A6A6]">Web Design</span><span class=" text-base font-semibold text-gray-lite pr-5 dark:text-[#A6A6A6]">80%</span></div><svg class="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none"><path class="rc-progress-line-trail" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#1C1C1C" stroke-width="1" fill-opacity="0"></path><path class="rc-progress-line-path" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#FF6464" stroke-width="1" fill-opacity="0" style="stroke-dasharray: 79.2px, 100px; stroke-dashoffset: 0px; transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s linear 0s, 0.06s;"></path></svg></div><div class=" mb-7"><div class="flex justify-between py-1"><span class=" text-base text-gray-lite font-semibold dark:text-[#A6A6A6]">Mobile App </span><span class=" text-base font-semibold text-gray-lite pr-5 dark:text-[#A6A6A6]">95%</span></div><svg class="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none"><path class="rc-progress-line-trail" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#1C1C1C" stroke-width="1" fill-opacity="0"></path><path class="rc-progress-line-path" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#9272D4" stroke-width="1" fill-opacity="0" style="stroke-dasharray: 94.05px, 100px; stroke-dashoffset: 0px; transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s linear 0s, 0.06s;"></path></svg></div><div class=" mb-7"><div class="flex justify-between py-1"><span class=" text-base text-gray-lite font-semibold dark:text-[#A6A6A6]">Illustrator</span><span class=" text-base font-semibold text-gray-lite pr-5 dark:text-[#A6A6A6]">65%</span></div><svg class="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none"><path class="rc-progress-line-trail" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#1C1C1C" stroke-width="1" fill-opacity="0"></path><path class="rc-progress-line-path" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#5185D4" stroke-width="1" fill-opacity="0" style="stroke-dasharray: 64.35px, 100px; stroke-dashoffset: 0px; transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s linear 0s, 0.06s;"></path></svg></div><div class=" mb-7"><div class="flex justify-between py-1"><span class=" text-base text-gray-lite font-semibold dark:text-[#A6A6A6]">Photoshope</span><span class=" text-base font-semibold text-gray-lite pr-5 dark:text-[#A6A6A6]">75%</span></div><svg class="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none"><path class="rc-progress-line-trail" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#1C1C1C" stroke-width="1" fill-opacity="0"></path><path class="rc-progress-line-path" d="M 0.5,0.5
+                L 99.5,0.5" stroke-linecap="round" stroke="#CA56F2" stroke-width="1" fill-opacity="0" style="stroke-dasharray: 74.25px, 100px; stroke-dashoffset: 0px; transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s linear 0s, 0.06s;"></path></svg></div></div>
+            
+        </div>
+        <div id="contact"
+            class=" lg:rounded-3xl rounded-b-xl bg-gray-100 dark:bg-slate-900 col-span-1  flex items-center justify-center">
+            <div class="rounded-2xl bg-[#F3F6F6] dark:bg-slate-900 w-3/4 ">
+                <h4 class="text-4xl font-poppins dark:text-white font-semibold mb-10">İletişim</h4>
+                <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] pb-2.5 items-center"><span
+                        class="social-icon bg-white dark:bg-black text-[#E93B81] shadow-md"><svg stroke="currentColor"
+                            fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+                            </path>
+                        </svg></span>
+                    <div class="text-left ml-2.5">
+                        <p class="text-md text-[#44566C] dark:text-[#A6A6A6]">Telefon</p>
+                        <p class="dark:text-white text-xl"> <a class="hover:text-[#FA5252] duration-300 transition"
+                                href="tel:+905428407589">+90 542 840 75 89</a></p>
+                    </div>
+                </div>
+                <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5 items-center"><span
+                        class="social-icon bg-white dark:bg-black text-[#6AB5B9] shadow-md"><svg stroke="currentColor"
+                            fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M176 216h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16zm-16 80c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16zm96 121.13c-16.42 0-32.84-5.06-46.86-15.19L0 250.86V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V250.86L302.86 401.94c-14.02 10.12-30.44 15.19-46.86 15.19zm237.61-254.18c-8.85-6.94-17.24-13.47-29.61-22.81V96c0-26.51-21.49-48-48-48h-77.55c-3.04-2.2-5.87-4.26-9.04-6.56C312.6 29.17 279.2-.35 256 0c-23.2-.35-56.59 29.17-73.41 41.44-3.17 2.3-6 4.36-9.04 6.56H96c-26.51 0-48 21.49-48 48v44.14c-12.37 9.33-20.76 15.87-29.61 22.81A47.995 47.995 0 0 0 0 200.72v10.65l96 69.35V96h320v184.72l96-69.35v-10.65c0-14.74-6.78-28.67-18.39-37.77z">
+                            </path>
+                        </svg></span>
+                    <div class="text-left ml-2.5">
+                        <p class="text-md text-[#44566C] dark:text-[#A6A6A6]">Email</p>
+                        <p class="dark:text-white text-xl"> <a class="hover:text-[#FA5252] duration-300 transition"
+                                href="mailto:burakcetinkaya2699@gmail.com">burakcetinkaya2699@gmail.com</a></p>
+                                
+                    </div>
+                </div>
+                <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5 items-center"><span
+                        class="social-icon bg-white dark:bg-black text-[#FD7590] shadow-md"><svg stroke="currentColor"
+                            fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+                            </path>
+                        </svg></span>
+                    <div class="text-left ml-2.5">
+                        <p class="text-md text-[#44566C] dark:text-[#A6A6A6]">Konum</p>
+                        <p class="dark:text-white text-xl">Eskişehir,Türkiye</p>
+                    </div>
+                </div>
+                <div class="flex  py-2.5 items-center"><span class="social-icon bg-white dark:bg-black text-[#C17CEB] shadow-md"><svg
+                            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+                            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z">
+                            </path>
+                        </svg></span>
+                    <div class="text-left ml-2.5">
+                        <p class="text-md text-[#44566C] dark:text-[#A6A6A6]">Doğum Tarihi</p>
+                        <p class="dark:text-white text-xl">May 27, 1990</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="card3" class="col-span-1 bg-gray-100 lg:rounded-3xl dark:bg-slate-900">
+            <div class="m-auto p-5 ">
+                <div data-aos="fade"
+                    class="mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425]  bg-color-810 rounded-xl  aos-init aos-animate">
+                    <h3 class="text-4xl "><span class="text-gray-lite dark:text-[#A6A6A6] ">Tasarım çalışması veya
+                            ortaklıklar için
+                        </span><br><span class="font-semibold dark:text-white">bana ulaşın. </span></h3>
+                    <form id="myForm" class="contact_form">
+                        <div class="relative  z-0 w-full mt-[40px] mb-8 group"><input type="text" name="name"
+                                class="nameInput block autofill:bg-transparent py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-shades-400 dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#FF6464] peer"
+                                placeholder=" " required=""><label for="name"
+                                class="peer-focus:font-medium absolute text-sm dark:text-white dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FF6464] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">İsim
+                                *</label></div>
+                        <div class="relative z-0 w-full mb-8 group"><input type="email" name="user_email"
+                                class="emailInput block autofill:text-red-900 needed py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-shades-400 dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#5185D4] peer"
+                                placeholder=" " id="user_email" required=""><label for="user_email"
+                                class="peer-focus:font-medium absolute text-sm dark:text-white dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#5185D4] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Email
+                                *</label></div>
+                        <div class="relative z-0 w-full mb-8 group"><input type="text" name="message"
+                                class="messageInput block autofill:bg-yellow-200 py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-shades-400 dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#CA56F2] peer"
+                                placeholder=" " id="message" required=""><label for="message"
+                                class="peer-focus:font-medium absolute text-sm dark:text-white dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#CA56F2] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Mesaj
+                                *</label></div>
+                        <div
+                            class="transition-all duration-300  ease-in-out inline-block hover:bg-gradient-to-r from-[#FA5252] to-[#DD2476] rounded-lg  mt-3">
+                            <input type="submit"
+                                class=" transition ease-in duration-200 font-semibold cursor-pointer border-color-910   hover:border-transparent px-6  py-2 rounded-lg border-[2px]  hover:text-white   dark:text-white dark:border-shades-400 "
+                                value="Gönder">
+                        </div>
+                        <div class="Toastify"></div>
+                        <div class="Toastify"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div
+            class="p-2 bg-gray-100 dark:bg-slate-900 dark:text-white rounded-t-full flex mx-auto w-5/4 justify-center mt-5">
+            &copy; 2022 Tüm Hakları <a class="text-red-500">&nbsp; Burak Çetinkaya</a>'ya saklıdır.</div>
+    </footer>
+
+
+    <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+    <script>
+        var themeToggleDarkIcon = document.getElementById(
+            "theme-toggle-dark-icon"
+        );
+        var themeToggleLightIcon = document.getElementById(
+            "theme-toggle-light-icon"
+        );
+
+        // Change the icons inside the button based on previous settings
+        if (
+            localStorage.getItem("color-theme") === "dark" ||
+            (!("color-theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            themeToggleLightIcon.classList.remove("hidden");
+        } else {
+            themeToggleDarkIcon.classList.remove("hidden");
+        }
+
+        var themeToggleBtn = document.getElementById("theme-toggle");
+
+        themeToggleBtn.addEventListener("click", function () {
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle("hidden");
+            themeToggleLightIcon.classList.toggle("hidden");
+
+            // if set via local storage previously
+            if (localStorage.getItem("color-theme")) {
+                if (localStorage.getItem("color-theme") === "light") {
+                    document.documentElement.classList.add("dark");
+                    localStorage.setItem("color-theme", "dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                    localStorage.setItem("color-theme", "light");
+                }
+
+                // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains("dark")) {
+                    document.documentElement.classList.remove("dark");
+                    localStorage.setItem("color-theme", "light");
+                } else {
+                    document.documentElement.classList.add("dark");
+                    localStorage.setItem("color-theme", "dark");
+                }
+            }
+        });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        const form = document.querySelector('.contact_form');
+        function sendMsg(e){
+            e.preventDefault();
+            const nameInput = document.querySelector('.nameInput'),
+            emailInput = document.querySelector('.emailInput'),
+            messageInput = document.querySelector('.messageInput');
+            
+            Email.send({
+            SecureToken : "debf0c17-6f01-4f41-8162-3aa4cbfe13eb",
+            To : 'burakcetinkaya2699@gmail.com',
+            From : 'burakcetinkaya2699@gmail.com',
+            Subject : "İletişim Formu - " + nameInput.value,
+            Body : messageInput.value+"<br>"+emailInput.value
+            }).then(
+            message => alert(message)
+                   );
+
+
+            
+        }
+        form.addEventListener('submit',sendMsg);
+    </script>
+    </body>
+
+</html>
